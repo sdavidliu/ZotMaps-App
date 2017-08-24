@@ -23,4 +23,4 @@ Note: Make sure to enable location services. Email zotmapsapp@gmail.com for ques
 ![Destinations](https://raw.githubusercontent.com/sdavidliu/ZotMaps-App/master/Screenshots/2.PNG)
 ![Menu](https://raw.githubusercontent.com/sdavidliu/ZotMaps-App/master/Screenshots/3.PNG)
 ![Map2](https://raw.githubusercontent.com/sdavidliu/ZotMaps-App/master/Screenshots/4.PNG)
-![About](https://raw.githubusercontent.com/sdavidliu/ZotMaps-App/master/Screenshots/5.PNG)
+![About](https://raw.githubusercontent.com/sdavidliu/ZotMaps-App/master/Screenshots/5.png)
