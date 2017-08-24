@@ -1,0 +1,6 @@
+framework module Pods_ZotMaps {
+  umbrella header "Pods-ZotMaps-umbrella.h"
+
+  export *
+  module * { export * }
+}

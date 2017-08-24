@@ -1,0 +1,830 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50E1B77005042A3479B6D64E /* Pods_ZotMapsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D7898B85991D1086083B62 /* Pods_ZotMapsUITests.framework */; };
+		70073DDBCE0AADF5C135FB40 /* Pods_ZotMapsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBAB224E3AD9C33BBC5AFE42 /* Pods_ZotMapsTests.framework */; };
+		952AED9F56DC4C679C774990 /* Pods_ZotMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CF7E1F27852E089A07EF51 /* Pods_ZotMaps.framework */; };
+		E8147C991F4CD3490063AE1C /* destinationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8147C981F4CD3490063AE1C /* destinationIcon.png */; };
+		E8147C9B1F4CD8130063AE1C /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8147C9A1F4CD8130063AE1C /* About.swift */; };
+		E85C7FE61F4B4B8400FE18F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C7FE51F4B4B8400FE18F8 /* AppDelegate.swift */; };
+		E85C7FE81F4B4B8400FE18F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C7FE71F4B4B8400FE18F8 /* ViewController.swift */; };
+		E85C7FEB1F4B4B8500FE18F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85C7FE91F4B4B8500FE18F8 /* Main.storyboard */; };
+		E85C7FED1F4B4B8500FE18F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E85C7FEC1F4B4B8500FE18F8 /* Assets.xcassets */; };
+		E85C7FF01F4B4B8500FE18F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85C7FEE1F4B4B8500FE18F8 /* LaunchScreen.storyboard */; };
+		E85C7FFB1F4B4B8500FE18F8 /* ZotMapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C7FFA1F4B4B8500FE18F8 /* ZotMapsTests.swift */; };
+		E85C80061F4B4B8500FE18F8 /* ZotMapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C80051F4B4B8500FE18F8 /* ZotMapsUITests.swift */; };
+		E8A199A81F4BA50A00593621 /* menuicon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8A199A71F4BA50A00593621 /* menuicon.png */; };
+		E8A199AA1F4BA87D00593621 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A199A91F4BA87D00593621 /* Menu.swift */; };
+		E8A199AC1F4BAD4200593621 /* EmergencyProcedures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A199AB1F4BAD4200593621 /* EmergencyProcedures.swift */; };
+		E8A199AE1F4BAFBE00593621 /* HowToUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A199AD1F4BAFBE00593621 /* HowToUse.swift */; };
+		E8A199B01F4BB2F400593621 /* ReportBug.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A199AF1F4BB2F400593621 /* ReportBug.swift */; };
+		E8A199B21F4BB8B900593621 /* zotmapsicon180.png in Resources */ = {isa = PBXBuildFile; fileRef = E8A199B11F4BB8B900593621 /* zotmapsicon180.png */; };
+		E8B1BE761F4E52E20053ECDE /* locationicon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8B1BE741F4E52E20053ECDE /* locationicon.png */; };
+		E8B1BE771F4E52E20053ECDE /* xicon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8B1BE751F4E52E20053ECDE /* xicon.png */; };
+		E8B1BE7C1F4E58260053ECDE /* fall.png in Resources */ = {isa = PBXBuildFile; fileRef = E8B1BE781F4E58260053ECDE /* fall.png */; };
+		E8B1BE7D1F4E58260053ECDE /* spring.png in Resources */ = {isa = PBXBuildFile; fileRef = E8B1BE791F4E58260053ECDE /* spring.png */; };
+		E8B1BE7E1F4E58260053ECDE /* summer.png in Resources */ = {isa = PBXBuildFile; fileRef = E8B1BE7A1F4E58260053ECDE /* summer.png */; };
+		E8B1BE7F1F4E58260053ECDE /* winter.png in Resources */ = {isa = PBXBuildFile; fileRef = E8B1BE7B1F4E58260053ECDE /* winter.png */; };
+		E8D7AE891F4B636600407084 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D7AE881F4B636600407084 /* MasterViewController.swift */; };
+		E8D7AE8B1F4B683200407084 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D7AE8A1F4B683200407084 /* Destination.swift */; };
+		E8DF8D221F4B8F9E0023BEC3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8DF8D211F4B8F9E0023BEC3 /* GoogleService-Info.plist */; };
+		E8DF8D231F4B8F9E0023BEC3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8DF8D211F4B8F9E0023BEC3 /* GoogleService-Info.plist */; };
+		E8DF8D241F4B8F9E0023BEC3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8DF8D211F4B8F9E0023BEC3 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E85C7FF71F4B4B8500FE18F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E85C7FDA1F4B4B8400FE18F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E85C7FE11F4B4B8400FE18F8;
+			remoteInfo = ZotMaps;
+		};
+		E85C80021F4B4B8500FE18F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E85C7FDA1F4B4B8400FE18F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E85C7FE11F4B4B8400FE18F8;
+			remoteInfo = ZotMaps;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4AAA128A2F07DB3F70B49068 /* Pods-ZotMapsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotMapsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZotMapsUITests/Pods-ZotMapsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4AB9C7A8F1EDEA72C0D92806 /* Pods-ZotMapsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotMapsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZotMapsTests/Pods-ZotMapsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A9AB02B27B316DF75AA5D788 /* Pods-ZotMapsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotMapsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZotMapsUITests/Pods-ZotMapsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B5E915B08015EC845F46FE9E /* Pods-ZotMapsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotMapsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZotMapsTests/Pods-ZotMapsTests.release.xcconfig"; sourceTree = "<group>"; };
+		CBAB224E3AD9C33BBC5AFE42 /* Pods_ZotMapsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZotMapsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE2817D038A6CBCA87705B6D /* Pods-ZotMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotMaps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZotMaps/Pods-ZotMaps.debug.xcconfig"; sourceTree = "<group>"; };
+		D3D7898B85991D1086083B62 /* Pods_ZotMapsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZotMapsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8147C981F4CD3490063AE1C /* destinationIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = destinationIcon.png; sourceTree = "<group>"; };
+		E8147C9A1F4CD8130063AE1C /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		E85C7FE21F4B4B8400FE18F8 /* ZotMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZotMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E85C7FE51F4B4B8400FE18F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E85C7FE71F4B4B8400FE18F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E85C7FEA1F4B4B8500FE18F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E85C7FEC1F4B4B8500FE18F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E85C7FEF1F4B4B8500FE18F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E85C7FF11F4B4B8500FE18F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E85C7FF61F4B4B8500FE18F8 /* ZotMapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZotMapsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E85C7FFA1F4B4B8500FE18F8 /* ZotMapsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZotMapsTests.swift; sourceTree = "<group>"; };
+		E85C7FFC1F4B4B8500FE18F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E85C80011F4B4B8500FE18F8 /* ZotMapsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZotMapsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E85C80051F4B4B8500FE18F8 /* ZotMapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZotMapsUITests.swift; sourceTree = "<group>"; };
+		E85C80071F4B4B8500FE18F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8A199A71F4BA50A00593621 /* menuicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuicon.png; sourceTree = "<group>"; };
+		E8A199A91F4BA87D00593621 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		E8A199AB1F4BAD4200593621 /* EmergencyProcedures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyProcedures.swift; sourceTree = "<group>"; };
+		E8A199AD1F4BAFBE00593621 /* HowToUse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToUse.swift; sourceTree = "<group>"; };
+		E8A199AF1F4BB2F400593621 /* ReportBug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportBug.swift; sourceTree = "<group>"; };
+		E8A199B11F4BB8B900593621 /* zotmapsicon180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zotmapsicon180.png; sourceTree = "<group>"; };
+		E8B1BE731F4E4D180053ECDE /* CNPPopupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNPPopupController.h; sourceTree = "<group>"; };
+		E8B1BE741F4E52E20053ECDE /* locationicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationicon.png; sourceTree = "<group>"; };
+		E8B1BE751F4E52E20053ECDE /* xicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xicon.png; sourceTree = "<group>"; };
+		E8B1BE781F4E58260053ECDE /* fall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fall.png; sourceTree = "<group>"; };
+		E8B1BE791F4E58260053ECDE /* spring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spring.png; sourceTree = "<group>"; };
+		E8B1BE7A1F4E58260053ECDE /* summer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = summer.png; sourceTree = "<group>"; };
+		E8B1BE7B1F4E58260053ECDE /* winter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = winter.png; sourceTree = "<group>"; };
+		E8D7AE881F4B636600407084 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		E8D7AE8A1F4B683200407084 /* Destination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		E8DF8D211F4B8F9E0023BEC3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F6CF7E1F27852E089A07EF51 /* Pods_ZotMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZotMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8932701E2B633CD40BB456 /* Pods-ZotMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotMaps.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZotMaps/Pods-ZotMaps.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E85C7FDF1F4B4B8400FE18F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				952AED9F56DC4C679C774990 /* Pods_ZotMaps.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E85C7FF31F4B4B8500FE18F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70073DDBCE0AADF5C135FB40 /* Pods_ZotMapsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E85C7FFE1F4B4B8500FE18F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50E1B77005042A3479B6D64E /* Pods_ZotMapsUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		389C1CD250A1630B9D3B34FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE2817D038A6CBCA87705B6D /* Pods-ZotMaps.debug.xcconfig */,
+				FA8932701E2B633CD40BB456 /* Pods-ZotMaps.release.xcconfig */,
+				4AB9C7A8F1EDEA72C0D92806 /* Pods-ZotMapsTests.debug.xcconfig */,
+				B5E915B08015EC845F46FE9E /* Pods-ZotMapsTests.release.xcconfig */,
+				A9AB02B27B316DF75AA5D788 /* Pods-ZotMapsUITests.debug.xcconfig */,
+				4AAA128A2F07DB3F70B49068 /* Pods-ZotMapsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E85C7FD91F4B4B8400FE18F8 = {
+			isa = PBXGroup;
+			children = (
+				E85C7FE41F4B4B8400FE18F8 /* ZotMaps */,
+				E85C7FF91F4B4B8500FE18F8 /* ZotMapsTests */,
+				E85C80041F4B4B8500FE18F8 /* ZotMapsUITests */,
+				E85C7FE31F4B4B8400FE18F8 /* Products */,
+				E85C80131F4B4D2900FE18F8 /* Frameworks */,
+				389C1CD250A1630B9D3B34FD /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		E85C7FE31F4B4B8400FE18F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E85C7FE21F4B4B8400FE18F8 /* ZotMaps.app */,
+				E85C7FF61F4B4B8500FE18F8 /* ZotMapsTests.xctest */,
+				E85C80011F4B4B8500FE18F8 /* ZotMapsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E85C7FE41F4B4B8400FE18F8 /* ZotMaps */ = {
+			isa = PBXGroup;
+			children = (
+				E85C7FE51F4B4B8400FE18F8 /* AppDelegate.swift */,
+				E85C7FE71F4B4B8400FE18F8 /* ViewController.swift */,
+				E8D7AE881F4B636600407084 /* MasterViewController.swift */,
+				E8D7AE8A1F4B683200407084 /* Destination.swift */,
+				E8A199A91F4BA87D00593621 /* Menu.swift */,
+				E8A199AD1F4BAFBE00593621 /* HowToUse.swift */,
+				E8A199AB1F4BAD4200593621 /* EmergencyProcedures.swift */,
+				E8A199AF1F4BB2F400593621 /* ReportBug.swift */,
+				E8147C9A1F4CD8130063AE1C /* About.swift */,
+				E8B1BE731F4E4D180053ECDE /* CNPPopupController.h */,
+				E85C7FE91F4B4B8500FE18F8 /* Main.storyboard */,
+				E85C7FEC1F4B4B8500FE18F8 /* Assets.xcassets */,
+				E8A199A71F4BA50A00593621 /* menuicon.png */,
+				E8147C981F4CD3490063AE1C /* destinationIcon.png */,
+				E8A199B11F4BB8B900593621 /* zotmapsicon180.png */,
+				E8B1BE741F4E52E20053ECDE /* locationicon.png */,
+				E8B1BE751F4E52E20053ECDE /* xicon.png */,
+				E8B1BE781F4E58260053ECDE /* fall.png */,
+				E8B1BE791F4E58260053ECDE /* spring.png */,
+				E8B1BE7A1F4E58260053ECDE /* summer.png */,
+				E8B1BE7B1F4E58260053ECDE /* winter.png */,
+				E85C7FEE1F4B4B8500FE18F8 /* LaunchScreen.storyboard */,
+				E85C7FF11F4B4B8500FE18F8 /* Info.plist */,
+				E8DF8D211F4B8F9E0023BEC3 /* GoogleService-Info.plist */,
+			);
+			path = ZotMaps;
+			sourceTree = "<group>";
+		};
+		E85C7FF91F4B4B8500FE18F8 /* ZotMapsTests */ = {
+			isa = PBXGroup;
+			children = (
+				E85C7FFA1F4B4B8500FE18F8 /* ZotMapsTests.swift */,
+				E85C7FFC1F4B4B8500FE18F8 /* Info.plist */,
+			);
+			path = ZotMapsTests;
+			sourceTree = "<group>";
+		};
+		E85C80041F4B4B8500FE18F8 /* ZotMapsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E85C80051F4B4B8500FE18F8 /* ZotMapsUITests.swift */,
+				E85C80071F4B4B8500FE18F8 /* Info.plist */,
+			);
+			path = ZotMapsUITests;
+			sourceTree = "<group>";
+		};
+		E85C80131F4B4D2900FE18F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6CF7E1F27852E089A07EF51 /* Pods_ZotMaps.framework */,
+				CBAB224E3AD9C33BBC5AFE42 /* Pods_ZotMapsTests.framework */,
+				D3D7898B85991D1086083B62 /* Pods_ZotMapsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E85C7FE11F4B4B8400FE18F8 /* ZotMaps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E85C800A1F4B4B8500FE18F8 /* Build configuration list for PBXNativeTarget "ZotMaps" */;
+			buildPhases = (
+				9285721A986DF735E3F2D456 /* [CP] Check Pods Manifest.lock */,
+				E85C7FDE1F4B4B8400FE18F8 /* Sources */,
+				E85C7FDF1F4B4B8400FE18F8 /* Frameworks */,
+				E85C7FE01F4B4B8400FE18F8 /* Resources */,
+				07CCF1EBE73FCB6756D59BCC /* [CP] Embed Pods Frameworks */,
+				CF77BE09DCA90193D97E092F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZotMaps;
+			productName = ZotMaps;
+			productReference = E85C7FE21F4B4B8400FE18F8 /* ZotMaps.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E85C7FF51F4B4B8500FE18F8 /* ZotMapsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E85C800D1F4B4B8500FE18F8 /* Build configuration list for PBXNativeTarget "ZotMapsTests" */;
+			buildPhases = (
+				2C515B981A16E9268855A705 /* [CP] Check Pods Manifest.lock */,
+				E85C7FF21F4B4B8500FE18F8 /* Sources */,
+				E85C7FF31F4B4B8500FE18F8 /* Frameworks */,
+				E85C7FF41F4B4B8500FE18F8 /* Resources */,
+				02CE9D25FBD0EDC0733B67AA /* [CP] Embed Pods Frameworks */,
+				73BCEFF4A4C2690F18C6D73E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E85C7FF81F4B4B8500FE18F8 /* PBXTargetDependency */,
+			);
+			name = ZotMapsTests;
+			productName = ZotMapsTests;
+			productReference = E85C7FF61F4B4B8500FE18F8 /* ZotMapsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E85C80001F4B4B8500FE18F8 /* ZotMapsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E85C80101F4B4B8500FE18F8 /* Build configuration list for PBXNativeTarget "ZotMapsUITests" */;
+			buildPhases = (
+				7AA5378A2BB67FA98C26296B /* [CP] Check Pods Manifest.lock */,
+				E85C7FFD1F4B4B8500FE18F8 /* Sources */,
+				E85C7FFE1F4B4B8500FE18F8 /* Frameworks */,
+				E85C7FFF1F4B4B8500FE18F8 /* Resources */,
+				B5DEA2BAFE575E1DF978256D /* [CP] Embed Pods Frameworks */,
+				D522950ADAC66DA7B80AE683 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E85C80031F4B4B8500FE18F8 /* PBXTargetDependency */,
+			);
+			name = ZotMapsUITests;
+			productName = ZotMapsUITests;
+			productReference = E85C80011F4B4B8500FE18F8 /* ZotMapsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E85C7FDA1F4B4B8400FE18F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "David Liu";
+				TargetAttributes = {
+					E85C7FE11F4B4B8400FE18F8 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 68RB738V9E;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
+					};
+					E85C7FF51F4B4B8500FE18F8 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 68RB738V9E;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E85C7FE11F4B4B8400FE18F8;
+					};
+					E85C80001F4B4B8500FE18F8 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 68RB738V9E;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E85C7FE11F4B4B8400FE18F8;
+					};
+				};
+			};
+			buildConfigurationList = E85C7FDD1F4B4B8400FE18F8 /* Build configuration list for PBXProject "ZotMaps" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E85C7FD91F4B4B8400FE18F8;
+			productRefGroup = E85C7FE31F4B4B8400FE18F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E85C7FE11F4B4B8400FE18F8 /* ZotMaps */,
+				E85C7FF51F4B4B8500FE18F8 /* ZotMapsTests */,
+				E85C80001F4B4B8500FE18F8 /* ZotMapsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E85C7FE01F4B4B8400FE18F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8B1BE7F1F4E58260053ECDE /* winter.png in Resources */,
+				E85C7FF01F4B4B8500FE18F8 /* LaunchScreen.storyboard in Resources */,
+				E8147C991F4CD3490063AE1C /* destinationIcon.png in Resources */,
+				E8B1BE7D1F4E58260053ECDE /* spring.png in Resources */,
+				E8B1BE771F4E52E20053ECDE /* xicon.png in Resources */,
+				E8DF8D221F4B8F9E0023BEC3 /* GoogleService-Info.plist in Resources */,
+				E85C7FED1F4B4B8500FE18F8 /* Assets.xcassets in Resources */,
+				E8B1BE7E1F4E58260053ECDE /* summer.png in Resources */,
+				E85C7FEB1F4B4B8500FE18F8 /* Main.storyboard in Resources */,
+				E8B1BE7C1F4E58260053ECDE /* fall.png in Resources */,
+				E8B1BE761F4E52E20053ECDE /* locationicon.png in Resources */,
+				E8A199A81F4BA50A00593621 /* menuicon.png in Resources */,
+				E8A199B21F4BB8B900593621 /* zotmapsicon180.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E85C7FF41F4B4B8500FE18F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8DF8D231F4B8F9E0023BEC3 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E85C7FFF1F4B4B8500FE18F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8DF8D241F4B8F9E0023BEC3 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02CE9D25FBD0EDC0733B67AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZotMapsTests/Pods-ZotMapsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		07CCF1EBE73FCB6756D59BCC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZotMaps/Pods-ZotMaps-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CNPPopupController/CNPPopupController.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNPPopupController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZotMaps/Pods-ZotMaps-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C515B981A16E9268855A705 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZotMapsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73BCEFF4A4C2690F18C6D73E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZotMapsTests/Pods-ZotMapsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AA5378A2BB67FA98C26296B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZotMapsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9285721A986DF735E3F2D456 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZotMaps-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5DEA2BAFE575E1DF978256D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZotMapsUITests/Pods-ZotMapsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF77BE09DCA90193D97E092F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZotMaps/Pods-ZotMaps-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D522950ADAC66DA7B80AE683 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZotMapsUITests/Pods-ZotMapsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E85C7FDE1F4B4B8400FE18F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E85C7FE81F4B4B8400FE18F8 /* ViewController.swift in Sources */,
+				E8A199AE1F4BAFBE00593621 /* HowToUse.swift in Sources */,
+				E8A199AC1F4BAD4200593621 /* EmergencyProcedures.swift in Sources */,
+				E85C7FE61F4B4B8400FE18F8 /* AppDelegate.swift in Sources */,
+				E8A199B01F4BB2F400593621 /* ReportBug.swift in Sources */,
+				E8D7AE8B1F4B683200407084 /* Destination.swift in Sources */,
+				E8D7AE891F4B636600407084 /* MasterViewController.swift in Sources */,
+				E8147C9B1F4CD8130063AE1C /* About.swift in Sources */,
+				E8A199AA1F4BA87D00593621 /* Menu.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E85C7FF21F4B4B8500FE18F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E85C7FFB1F4B4B8500FE18F8 /* ZotMapsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E85C7FFD1F4B4B8500FE18F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E85C80061F4B4B8500FE18F8 /* ZotMapsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E85C7FF81F4B4B8500FE18F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E85C7FE11F4B4B8400FE18F8 /* ZotMaps */;
+			targetProxy = E85C7FF71F4B4B8500FE18F8 /* PBXContainerItemProxy */;
+		};
+		E85C80031F4B4B8500FE18F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E85C7FE11F4B4B8400FE18F8 /* ZotMaps */;
+			targetProxy = E85C80021F4B4B8500FE18F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E85C7FE91F4B4B8500FE18F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E85C7FEA1F4B4B8500FE18F8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E85C7FEE1F4B4B8500FE18F8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E85C7FEF1F4B4B8500FE18F8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E85C80081F4B4B8500FE18F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E85C80091F4B4B8500FE18F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E85C800B1F4B4B8500FE18F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE2817D038A6CBCA87705B6D /* Pods-ZotMaps.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 68RB738V9E;
+				INFOPLIST_FILE = ZotMaps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dave-Joe.ZotMaps";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E85C800C1F4B4B8500FE18F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA8932701E2B633CD40BB456 /* Pods-ZotMaps.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 68RB738V9E;
+				INFOPLIST_FILE = ZotMaps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dave-Joe.ZotMaps";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E85C800E1F4B4B8500FE18F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AB9C7A8F1EDEA72C0D92806 /* Pods-ZotMapsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 68RB738V9E;
+				INFOPLIST_FILE = ZotMapsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ZotMapsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZotMaps.app/ZotMaps";
+			};
+			name = Debug;
+		};
+		E85C800F1F4B4B8500FE18F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5E915B08015EC845F46FE9E /* Pods-ZotMapsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 68RB738V9E;
+				INFOPLIST_FILE = ZotMapsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ZotMapsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZotMaps.app/ZotMaps";
+			};
+			name = Release;
+		};
+		E85C80111F4B4B8500FE18F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9AB02B27B316DF75AA5D788 /* Pods-ZotMapsUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 68RB738V9E;
+				INFOPLIST_FILE = ZotMapsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ZotMapsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ZotMaps;
+			};
+			name = Debug;
+		};
+		E85C80121F4B4B8500FE18F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AAA128A2F07DB3F70B49068 /* Pods-ZotMapsUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 68RB738V9E;
+				INFOPLIST_FILE = ZotMapsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dave-Joe.ZotMapsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ZotMaps;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E85C7FDD1F4B4B8400FE18F8 /* Build configuration list for PBXProject "ZotMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E85C80081F4B4B8500FE18F8 /* Debug */,
+				E85C80091F4B4B8500FE18F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E85C800A1F4B4B8500FE18F8 /* Build configuration list for PBXNativeTarget "ZotMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E85C800B1F4B4B8500FE18F8 /* Debug */,
+				E85C800C1F4B4B8500FE18F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E85C800D1F4B4B8500FE18F8 /* Build configuration list for PBXNativeTarget "ZotMapsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E85C800E1F4B4B8500FE18F8 /* Debug */,
+				E85C800F1F4B4B8500FE18F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E85C80101F4B4B8500FE18F8 /* Build configuration list for PBXNativeTarget "ZotMapsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E85C80111F4B4B8500FE18F8 /* Debug */,
+				E85C80121F4B4B8500FE18F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E85C7FDA1F4B4B8400FE18F8 /* Project object */;
+}

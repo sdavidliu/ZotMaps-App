@@ -1,0 +1,6 @@
+framework module Pods_ZotMapsUITests {
+  umbrella header "Pods-ZotMapsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
