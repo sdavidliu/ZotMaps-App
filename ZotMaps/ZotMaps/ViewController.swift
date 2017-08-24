@@ -5,6 +5,10 @@
 //  Created by DL on 8/21/17.
 //  Copyright © 2017 DL. All rights reserved.
 //
+//  To Do:
+//  - Submit another version because fix bug for searchBar
+//  - Need to fix crash when location services is enabled, but can't find location
+//  - 
 
 import UIKit
 import CoreLocation

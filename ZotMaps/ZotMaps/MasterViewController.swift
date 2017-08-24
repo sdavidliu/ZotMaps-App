@@ -100,7 +100,7 @@ class MasterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let destination: Destination
-        if searchController.isActive && searchController.searchBar.text != "" {
+        if searchController.isActive{
             destination = filteredDestinations[indexPath.row]
         } else {
             destination = destinations[indexPath.row]
