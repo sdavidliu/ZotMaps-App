@@ -37,7 +37,6 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         
         //Sets up navigation bar
-        //self.title = "EVENTS"
         //self.navigationController?.navigationBar.barTintColor = darkBlue
         //self.navigationController?.navigationBar.shadowImage = UIImage()
         //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -45,7 +44,6 @@ class MasterViewController: UITableViewController {
         //self.navigationController?.navigationBar.tintColor = UIColor.white
         //self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: yellow]
         
-        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MasterViewController.dismissView))
         
         UISearchBar.appearance().barTintColor = lightBlue
         UISearchBar.appearance().tintColor = UIColor.white

@@ -6,8 +6,6 @@
 //  Copyright © 2017 DL. All rights reserved.
 //
 //  To Do:
-//  - Submit another version because fix bug for searchBar
-//  - Need to fix crash when location services is enabled, but can't find location
 //  - 
 
 import UIKit
@@ -43,16 +41,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
             CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways){
             
-            locManager.delegate = self
-            locManager.startUpdatingLocation()
-            
-            currentLocation = locManager.location!
-            //currentLocation = CLLocation(latitude: 33.648477, longitude: -117.840464)
-            let latitude = currentLocation.coordinate.latitude
-            let longitude = currentLocation.coordinate.longitude
-            let startCoord = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            let adjustedRegion = mapView.regionThatFits(MKCoordinateRegionMakeWithDistance(startCoord, 300, 300))
-            mapView.setRegion(adjustedRegion, animated: true)
+            if let currentLocation = locManager.location{
+                locManager.delegate = self
+                locManager.startUpdatingLocation()
+                //currentLocation = CLLocation(latitude: 33.648477, longitude: -117.840464)
+                let latitude = currentLocation.coordinate.latitude
+                let longitude = currentLocation.coordinate.longitude
+                let startCoord = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                let adjustedRegion = mapView.regionThatFits(MKCoordinateRegionMakeWithDistance(startCoord, 300, 300))
+                mapView.setRegion(adjustedRegion, animated: true)
+            }else{
+                showPopupWithStyle(title: "ERROR", subtitle: "Location Services", description: "Sorry. The app is having trouble finding your location. Try again later...")
+            }
             
         }else{
             let startCoord = CLLocationCoordinate2D(latitude: 33.645905, longitude: -117.842739)
@@ -170,54 +170,58 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             if (lat != 0.0 && long != 0.0){
                 
                 //currentLocation = CLLocation(latitude: 33.648477, longitude: -117.840464)
-                currentLocation = locManager.location!
-                let loc = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
-                let destinationLocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                let sourcePlacemark = MKPlacemark(coordinate: loc, addressDictionary: nil)
-                let destinationPlacemark = MKPlacemark(coordinate: destinationLocation, addressDictionary: nil)
-                let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
-                destinationMapItem = MKMapItem(placemark: destinationPlacemark)
-                let destinationAnnotation = MKPointAnnotation()
-                destinationAnnotation.title = UserDefaults.standard.string(forKey: "Name")
-                if let location = destinationPlacemark.location {
-                    destinationAnnotation.coordinate = location.coordinate
-                }
-                self.mapView.showAnnotations([destinationAnnotation], animated: true )
-                self.mapView.selectAnnotation(destinationAnnotation, animated: false)
-                let directionRequest = MKDirectionsRequest()
-                directionRequest.source = sourceMapItem
-                directionRequest.destination = destinationMapItem
-                directionRequest.transportType = .walking
-                let directions = MKDirections(request: directionRequest)
-                directions.calculate {
-                    (response, error) -> Void in
-                    
-                    guard let response = response else {
-                        if let error = error {
-                            print("Error: \(error)")
+                if let currentLocation = locManager.location{
+                    let loc = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
+                    let destinationLocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                    let sourcePlacemark = MKPlacemark(coordinate: loc, addressDictionary: nil)
+                    let destinationPlacemark = MKPlacemark(coordinate: destinationLocation, addressDictionary: nil)
+                    let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+                    destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+                    let destinationAnnotation = MKPointAnnotation()
+                    destinationAnnotation.title = UserDefaults.standard.string(forKey: "Name")
+                    if let location = destinationPlacemark.location {
+                        destinationAnnotation.coordinate = location.coordinate
+                    }
+                    self.mapView.showAnnotations([destinationAnnotation], animated: true )
+                    self.mapView.selectAnnotation(destinationAnnotation, animated: false)
+                    let directionRequest = MKDirectionsRequest()
+                    directionRequest.source = sourceMapItem
+                    directionRequest.destination = destinationMapItem
+                    directionRequest.transportType = .walking
+                    let directions = MKDirections(request: directionRequest)
+                    directions.calculate {
+                        (response, error) -> Void in
+                        
+                        guard let response = response else {
+                            if let error = error {
+                                print("Error: \(error)")
+                            }
+                            
+                            return
                         }
                         
-                        return
+                        let route = response.routes[0]
+                        self.mapView.add((route.polyline), level: MKOverlayLevel.aboveRoads)
+                        
+                        let distance = Int((response.routes.first?.distance)!)
+                        let time = Int((response.routes.first?.expectedTravelTime)!/60)
+                        self.button.setTitle("~\(String(describing: distance)) meters   ~\(String(describing: time)) minutes", for: .normal)
+                        self.button.isHidden = false
+                        self.clearButton.isHidden = false
+                        
+                        let adjustedRegion = self.mapView.regionThatFits(MKCoordinateRegionMakeWithDistance(loc, 300, 300))
+                        self.mapView.setRegion(adjustedRegion, animated: true)
                     }
-                    
-                    let route = response.routes[0]
-                    self.mapView.add((route.polyline), level: MKOverlayLevel.aboveRoads)
-                    
-                    let distance = Int((response.routes.first?.distance)!)
-                    let time = Int((response.routes.first?.expectedTravelTime)!/60)
-                    self.button.setTitle("~\(String(describing: distance)) meters   ~\(String(describing: time)) minutes", for: .normal)
-                    self.button.isHidden = false
-                    self.clearButton.isHidden = false
-                    
-                    let adjustedRegion = self.mapView.regionThatFits(MKCoordinateRegionMakeWithDistance(loc, 300, 300))
-                    self.mapView.setRegion(adjustedRegion, animated: true)
                 }
             }else{
                 button.isHidden = true
                 clearButton.isHidden = true
             }
-        }else{
+        }else if (UserDefaults.standard.value(forKey: "test") != nil){
             showPopupWithStyle(title: "ERROR", subtitle: "Location Services", description: "Please turn on Location Services for the app in Settings --> Privacy --> Location Services --> ZotMaps to \"While Using the App.\"")
+        }else{
+            UserDefaults.standard.setValue("downloaded", forKey: "test")
+            UserDefaults.standard.synchronize()
         }
     }
     
@@ -244,15 +248,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         paragraphStyle.alignment = NSTextAlignment.center
         
         let title = NSAttributedString(string: title, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 20), NSParagraphStyleAttributeName: paragraphStyle])
-        let lineOne = NSAttributedString(string: subtitle, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 25), NSForegroundColorAttributeName: UIColor.init(colorLiteralRed: 0.46, green: 0.8, blue: 1.0, alpha: 1.0), NSParagraphStyleAttributeName: paragraphStyle])
+        let lineOne = NSAttributedString(string: subtitle, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 25), NSForegroundColorAttributeName: lightBlue, NSParagraphStyleAttributeName: paragraphStyle])
         let lineTwo = NSAttributedString(string: description, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 15), NSParagraphStyleAttributeName: paragraphStyle])
         
         let button = CNPPopupButton.init(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
         button.setTitleColor(UIColor.white, for: UIControlState())
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.setTitle("Done", for: UIControlState())
+        button.setTitle("OK", for: UIControlState())
         
-        button.backgroundColor = UIColor.init(colorLiteralRed: 0.46, green: 0.8, blue: 1.0, alpha: 1.0)
+        button.backgroundColor = lightBlue
         
         button.layer.cornerRadius = 4;
         button.selectionHandler = { (button) -> Void in
