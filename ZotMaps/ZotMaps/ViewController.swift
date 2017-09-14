@@ -30,6 +30,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     let lightBlue = UIColor(red: 0.0/255.0, green: 100.0/255.0, blue: 164.0/255.0, alpha: 1.0)
     let darkBlue = UIColor(red: 27.0/255.0, green: 61.0/255.0, blue: 109.0/255.0, alpha: 1.0)
     let yellow = UIColor(red: 255.0/255.0, green: 210.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+    var tenSecCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,48 +111,56 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let lat = UserDefaults.standard.double(forKey: "Lat")
         let long = UserDefaults.standard.double(forKey: "Long")
         
-        if (lat != 0.0 && long != 0.0){
+        if (lat != 0.0 && long != 0.0) {
             
-            let loc = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
-            //let destinationLocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
-            let sourcePlacemark = MKPlacemark(coordinate: loc, addressDictionary: nil)
-            //let destinationPlacemark = MKPlacemark(coordinate: destinationLocation, addressDictionary: nil)
-            let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
-            //let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
-            //let destinationAnnotation = MKPointAnnotation()
-            //destinationAnnotation.title = UserDefaults.standard.string(forKey: "Name")
-            //if let location = destinationPlacemark.location {
-                //destinationAnnotation.coordinate = location.coordinate
-            //}
-            //self.mapView.showAnnotations([destinationAnnotation], animated: true )
-            let directionRequest = MKDirectionsRequest()
-            directionRequest.source = sourceMapItem
-            directionRequest.destination = destinationMapItem
-            directionRequest.transportType = .walking
-            let directions = MKDirections(request: directionRequest)
-            directions.calculate {
-                (response, error) -> Void in
+            tenSecCount += 1
+            if (tenSecCount >= 10) {
+                tenSecCount = 0
+            }
+            
+            if (tenSecCount == 0) {
                 
-                guard let response = response else {
-                    if let error = error {
-                        print("Error: \(error)")
+                let loc = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
+                //let destinationLocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                let sourcePlacemark = MKPlacemark(coordinate: loc, addressDictionary: nil)
+                //let destinationPlacemark = MKPlacemark(coordinate: destinationLocation, addressDictionary: nil)
+                let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+                //let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+                //let destinationAnnotation = MKPointAnnotation()
+                //destinationAnnotation.title = UserDefaults.standard.string(forKey: "Name")
+                //if let location = destinationPlacemark.location {
+                //destinationAnnotation.coordinate = location.coordinate
+                //}
+                //self.mapView.showAnnotations([destinationAnnotation], animated: true )
+                let directionRequest = MKDirectionsRequest()
+                directionRequest.source = sourceMapItem
+                directionRequest.destination = destinationMapItem
+                directionRequest.transportType = .walking
+                let directions = MKDirections(request: directionRequest)
+                directions.calculate {
+                    (response, error) -> Void in
+                    
+                    guard let response = response else {
+                        if let error = error {
+                            print("Error: \(error)")
+                        }
+                        
+                        return
                     }
                     
-                    return
+                    let route = response.routes[0]
+                    self.mapView.removeOverlays(self.mapView.overlays)
+                    self.mapView.add((route.polyline), level: MKOverlayLevel.aboveRoads)
+                    
+                    let distance = Int((response.routes.first?.distance)!)
+                    let time = Int((response.routes.first?.expectedTravelTime)!/60)
+                    self.button.setTitle("~\(String(describing: distance)) meters   ~\(String(describing: time)) minutes", for: .normal)
+                    self.button.isHidden = false
+                    self.clearButton.isHidden = false
+                    
+                    //let adjustedRegion = self.mapView.regionThatFits(MKCoordinateRegionMakeWithDistance(loc, 300, 300))
+                    //self.mapView.setRegion(adjustedRegion, animated: true)
                 }
-                
-                let route = response.routes[0]
-                self.mapView.removeOverlays(self.mapView.overlays)
-                self.mapView.add((route.polyline), level: MKOverlayLevel.aboveRoads)
-                
-                let distance = Int((response.routes.first?.distance)!)
-                let time = Int((response.routes.first?.expectedTravelTime)!/60)
-                self.button.setTitle("~\(String(describing: distance)) meters   ~\(String(describing: time)) minutes", for: .normal)
-                self.button.isHidden = false
-                self.clearButton.isHidden = false
-                
-                //let adjustedRegion = self.mapView.regionThatFits(MKCoordinateRegionMakeWithDistance(loc, 300, 300))
-                //self.mapView.setRegion(adjustedRegion, animated: true)
             }
         }else{
             button.isHidden = true
@@ -226,8 +235,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     @IBAction func goToLocation(_ sender: UIButton) {
-        let adjustedRegion = mapView.regionThatFits(MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 300, 300))
-        mapView.setRegion(adjustedRegion, animated: true)
+        if let currentLocation = locManager.location{
+            let latitude = currentLocation.coordinate.latitude
+            let longitude = currentLocation.coordinate.longitude
+            let startCoord = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            let adjustedRegion = mapView.regionThatFits(MKCoordinateRegionMakeWithDistance(startCoord, 300, 300))
+            mapView.setRegion(adjustedRegion, animated: true)
+        }else{
+            showPopupWithStyle(title: "ERROR", subtitle: "Location Services", description: "Sorry. The app is having trouble finding your location. Try again later...")
+        }
     }
     
     
