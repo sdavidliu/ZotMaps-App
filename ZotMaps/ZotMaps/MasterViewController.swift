@@ -21,13 +21,18 @@
  */
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class MasterViewController: UITableViewController {
     
     // MARK: - Properties
     var destinations = AppDelegate.Database.destinations.sorted(by: {(d1: Destination, d2: Destination) -> Bool in return d1.name < d2.name})
     var filteredDestinations = [Destination]()
+    let destinationRef = FIRDatabase.database().reference(withPath: "User Destinations")
+    let searchRef = FIRDatabase.database().reference(withPath: "User Searches")
     let searchController = UISearchController(searchResultsController: nil)
+    var currentText = ""
     let lightBlue = UIColor(red: 0.0/255.0, green: 100.0/255.0, blue: 164.0/255.0, alpha: 1.0)
     let darkBlue = UIColor(red: 27.0/255.0, green: 61.0/255.0, blue: 109.0/255.0, alpha: 1.0)
     let yellow = UIColor(red: 255.0/255.0, green: 210.0/255.0, blue: 0.0/255.0, alpha: 1.0)
@@ -36,34 +41,46 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var res:[Destination] = []
+        destinations.forEach { (p) -> () in
+            if !res.contains (where: { $0.name == p.name }) {
+                res.append(p)
+            }
+        }
+        destinations = res
+        
         //Sets up navigation bar
         //self.navigationController?.navigationBar.barTintColor = darkBlue
         //self.navigationController?.navigationBar.shadowImage = UIImage()
         //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.default
+        //self.navigationController?.navigationBar.barStyle = UIBarStyle.default
         //self.navigationController?.navigationBar.tintColor = UIColor.white
         //self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: yellow]
         
-        
         UISearchBar.appearance().barTintColor = lightBlue
         UISearchBar.appearance().tintColor = UIColor.white
+        //searchController.searchBar.backgroundColor = lightBlue
         if #available(iOS 9.0, *) {
-            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = self.view.tintColor
+            UISearchBar.appearance().tintColor = lightBlue
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = lightBlue
         } else {
             // Fallback on earlier versions
         }
         
-        // Setup the Search Controller
         searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
-        searchController.hidesNavigationBarDuringPresentation = false
+        if #available(iOS 11.0, *) {
+            navigationItem.searchController = searchController
+            navigationItem.hidesSearchBarWhenScrolling = false
+        } else {
+            tableView.tableHeaderView = searchController.searchBar
+        }
         definesPresentationContext = true
         searchController.dimsBackgroundDuringPresentation = false
-        //searchController.searchBar.showsScopeBar = true
+        searchController.hidesNavigationBarDuringPresentation = true
         
         // Setup the Scope Bar
         searchController.searchBar.scopeButtonTitles = ["All", "Classrooms", "Offices", "Other"]
-        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchBar.delegate = self
         
     }
     
@@ -108,10 +125,33 @@ class MasterViewController: UITableViewController {
         UserDefaults.standard.set(destination.long, forKey: "Long")
         UserDefaults.standard.set(destination.name, forKey: "Name")
         UserDefaults.standard.synchronize()
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = formatter.string(from: date)
+        let destinationResult = "Destination: " + dateString
+        let ref = self.destinationRef.child(destinationResult)
+        ref.setValue(destination.name)
+        
         _ = navigationController?.popToRootViewController(animated: true)
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        if (searchText.characters.count >= currentText.characters.count) {
+            currentText = searchText
+        }else if (searchText.characters.count == 0) {
+            if (currentText != "") {
+                let date = Date()
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let dateString = formatter.string(from: date)
+                let searchResult = "Search: " + dateString
+                let ref = self.searchRef.child(searchResult)
+                ref.setValue(currentText)
+                currentText = ""
+            }
+        }
         filteredDestinations = destinations.filter({( destination : Destination) -> Bool in
             let categoryMatch = (scope == "All") || (destination.category == scope)
             if searchText.isEmpty {
@@ -122,12 +162,31 @@ class MasterViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        if (currentText != "") {
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let dateString = formatter.string(from: date)
+            let searchResult = "Search: " + dateString
+            let ref = self.searchRef.child(searchResult)
+            ref.setValue(currentText)
+        }
+    }
+    
 }
 
 extension MasterViewController: UISearchBarDelegate {
     // MARK: - UISearchBar Delegate
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+}
+
+extension MasterViewController: UIBarPositioningDelegate {
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        print("hi")
+        return .topAttached
     }
 }
 

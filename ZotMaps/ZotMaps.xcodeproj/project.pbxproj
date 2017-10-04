@@ -94,6 +94,8 @@
 		E8D7AE881F4B636600407084 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		E8D7AE8A1F4B683200407084 /* Destination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		E8DF8D211F4B8F9E0023BEC3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E8F20D991F773FC3009E8B89 /* smallmenuicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallmenuicon.png; sourceTree = "<group>"; };
+		E8F20D9A1F77401D009E8B89 /* smalldestinationicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smalldestinationicon.png; sourceTree = "<group>"; };
 		F6CF7E1F27852E089A07EF51 /* Pods_ZotMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZotMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8932701E2B633CD40BB456 /* Pods-ZotMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotMaps.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZotMaps/Pods-ZotMaps.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,7 +179,9 @@
 				E85C7FE91F4B4B8500FE18F8 /* Main.storyboard */,
 				E85C7FEC1F4B4B8500FE18F8 /* Assets.xcassets */,
 				E8A199A71F4BA50A00593621 /* menuicon.png */,
+				E8F20D991F773FC3009E8B89 /* smallmenuicon.png */,
 				E8147C981F4CD3490063AE1C /* destinationIcon.png */,
+				E8F20D9A1F77401D009E8B89 /* smalldestinationicon.png */,
 				E8A199B11F4BB8B900593621 /* zotmapsicon180.png */,
 				E8B1BE741F4E52E20053ECDE /* locationicon.png */,
 				E8B1BE751F4E52E20053ECDE /* xicon.png */,

@@ -27,8 +27,11 @@ class ReportBug: UIViewController {
     }
     
     func createEmail(){
-        let email = "zotmapsapp@gmail.com"
-        let url = URL(string: "mailto:\(email)")
+        let email = "anteatermaps@gmail.com"
+        let subject = "AnteaterMaps Bug Report"
+        let body = ""
+        let coded = "mailto:\(email)?subject=\(subject)&body=\(body)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let url = URL(string: coded!)
         UIApplication.shared.openURL(url!)
     }
 

@@ -34,7 +34,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                        
         mapView.delegate = self
         
         locManager.requestWhenInUseAuthorization()
@@ -66,6 +66,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         button.layer.borderColor = yellow.cgColor
         button.addTarget(self, action: #selector(ViewController.test), for: .touchUpInside)
         
+    }
+    
+    func test2(){
+        print("hi")
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -168,7 +172,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //topMenuButton.isHidden = false
+        //topDestinationButton.isHidden = false
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
+                
         let lat = UserDefaults.standard.double(forKey: "Lat")
         let long = UserDefaults.standard.double(forKey: "Long")
         
@@ -178,8 +188,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse){
             if (lat != 0.0 && long != 0.0){
                 
-                //currentLocation = CLLocation(latitude: 33.648477, longitude: -117.840464)
                 if let currentLocation = locManager.location{
+                    //currentLocation = CLLocation(latitude: 33.648477, longitude: -117.840464)
                     let loc = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
                     let destinationLocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
                     let sourcePlacemark = MKPlacemark(coordinate: loc, addressDictionary: nil)
@@ -358,6 +368,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             count = 0
             animationTimer.invalidate()
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //topMenuButton.isHidden = true
+        //topDestinationButton.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {

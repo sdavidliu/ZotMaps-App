@@ -14,6 +14,7 @@ import FirebaseDatabase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let categories = ["Offices", "Classrooms", "Other"]
     struct Database {
         static var destinations = [Destination]()
     }
@@ -24,15 +25,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         let ref = FIRDatabase.database().reference()
-
+        
         ref.observe(.value, with: { snapshot in
             
             let data = (snapshot.value! as AnyObject).object(forKey: "Destinations")! as! Dictionary<String,Dictionary<String,AnyObject>>
-            //print(data)
-            for location in data {
-                Database.destinations.append(Destination(name: location.key, category: location.value["Category"] as! String, lat: location.value["Lat"] as! Double, long: location.value["Long"] as! Double))
+            if (Database.destinations.count == 0) {
+                for location in data {
+                    if (location.value["Category"] != nil &&  location.value["Lat"] != nil && location.value["Long"] != nil){
+                        /*
+                         if (!self.categories.contains(location.value["Category"] as! String)) {
+                         print()
+                         print("\(location.key) has invalid category!")
+                         print()
+                         }
+                         if (location.value["Long"] as! Double > 0.0) {
+                         print()
+                         print("\(location.key) has invalid longitude!")
+                         print()
+                         }*/
+                        
+                        Database.destinations.append(Destination(name: location.key, category: location.value["Category"] as! String, lat: location.value["Lat"] as! Double, long: location.value["Long"] as! Double))
+                    }else{
+                        print("\(location.key) has invalid values...")
+                    }
+                }
+                
+                print("Download complete")
             }
-            
             
         }, withCancel: {
             (error:Error) -> Void in
